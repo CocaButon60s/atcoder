@@ -1,0 +1,83 @@
+{
+  "tasks": [
+    {
+      "detail": "デバッグビルド",
+      "type": "shell",
+      "label": "dbg-build",
+      "options": { "cwd": "${fileDirname}" },
+      "command": "g++ -std=c++20 -Wall -Wextra -I${workspaceFolder}/include -g -O0 ${file}",
+      "presentation": {
+        "echo": false,
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "hide": true
+    },
+    {
+      "detail": "テスト",
+      "type": "shell",
+      "label": "test",
+      "options": { "cwd": "${fileDirname}" },
+      "command": "oj test -d tests",
+      "presentation": {
+        "focus": true,
+        "echo": false,
+        "clear": false,
+        "showReuseMessage": false
+      },
+      "dependsOn": "dbg-build",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "hide": true
+    },
+    {
+      "detail": "バンドル",
+      "type": "shell",
+      "label": "bundle",
+      "options": {
+        "cwd": "${fileDirname}",
+        "env": { "DISPLAY": "172.20.176.1:0" }
+      },
+      "command": "oj-bundle -I ${workspaceFolder}/include ${file} 2>/dev/null | sed '/^#line /d'",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "clear": true,
+        "showReuseMessage": false,
+        "focus": true
+      },
+      "hide": true
+    },
+    {
+      "detail": "環境構築",
+      "type": "shell",
+      "label": "new",
+      "options": { "cwd": "${workspaceFolder}" },
+      "command": "acc new ${input:contest_id}",
+      "problemMatcher": [],
+      "presentation": {
+        "focus": true
+      },
+      "hide": true
+    }
+    // {
+    //   "detail": "提出",
+    //   "type": "shell",
+    //   "label": "submit",
+    //   "dependsOn": "bundle",
+    //   "options": { "cwd": "${fileDirname}" },
+    //   "command": "acc submit submit.cpp",
+    //   "hide": true
+    // }
+  ],
+  "inputs": [
+    {
+      "id": "contest_id",
+      "type": "promptString",
+      "description": "コンテストID"
+    }
+  ],
+  "version": "2.0.0"
+}

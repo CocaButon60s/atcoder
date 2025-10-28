@@ -1,0 +1,17 @@
+{
+  "name": "AtCoder Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "esbenp.prettier-vscode",
+        "nicollasr.vscode-streamdeck",
+        "charliermarsh.ruff"
+      ]
+    }
+  },
+  "remoteUser": "ubuntu"
+}
