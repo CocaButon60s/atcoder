@@ -32,6 +32,21 @@ const auto PI = acos(-1);
 #define nfor(i, s, n) for (ll i = s; i < n; i++)
 #define dfor(i, s, n) for (ll i = (s) - 1; i >= n; i--)
 
+#define nall(a) a.begin(), a.end()
+#define rall(a) a.rbegin(), a.rend()
+
+#define pub push_back
+#define eb emplace_back
+#define em emplace
+#define pob pop_back
+
+#define print(x) cout << x << endl
+#define YES print("Yes")
+#define NO print("No")
+#define YN(cond) (cond) ? YES : NO
+
+#define next_p(v) next_permutation(nall(a))
+
 template <typename T>
 istream &operator>>(istream &i, vc<T> &v)
 {
@@ -55,17 +70,26 @@ bool chmax(T &a, T b)
     return a == b;
 }
 
-#define nall(a) a.begin(), a.end()
-#define rall(a) a.rbegin(), a.rend()
+ll llpow(ll base, ll exp)
+{
+    ll ret = 1;
+    rep(i, exp) ret *= base;
+    return ret;
+}
 
-#define pub push_back
-#define eb emplace_back
-#define em emplace
-#define pob pop_back
-
-#define print(x) cout << x << endl
-#define YES print("Yes")
-#define NO print("No")
-#define YN(cond) (cond) ? YES : NO
-
-#define next_p(v) next_permutation(nall(a))
+ll n2d(string num, ll base)
+{
+    ll sum = 0;
+    rep(i, num.size()) sum += (num[i] - '0') * llpow(base, num.size() - 1 - i);
+    return sum;
+}
+string d2n(ll num, ll base)
+{
+    string ret = "";
+    while (num > 0)
+    {
+        ret.insert(0, 1, num % base + '0');
+        num /= base;
+    }
+    return ret != "" ? ret : "0";
+}
