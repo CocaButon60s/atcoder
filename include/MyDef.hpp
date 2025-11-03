@@ -18,7 +18,9 @@ using vcl = vc<ll>;
 using vvl = vc<vcl>;
 using vvvl = vc<vvl>;
 using vcs = vc<string>;
+using vcc = vc<char>;
 using vvs = vc<vcs>;
+using vvc = vc<vcc>;
 using vcp = vc<pll>;
 
 using pq = priority_queue<ll, vcl>;
@@ -92,4 +94,21 @@ string d2n(ll num, ll base)
         num /= base;
     }
     return ret != "" ? ret : "0";
+}
+
+bool isSqure(ll val)
+{
+    ll left = 0, right = val;
+    while (left <= right)
+    {
+        ll mid = left + (right - left) / 2;
+        ll sq = llpow(mid, 2);
+        if (sq < val)
+            left = mid + 1;
+        else if (sq > val)
+            right = mid - 1;
+        else
+            return true;
+    }
+    return false;
 }

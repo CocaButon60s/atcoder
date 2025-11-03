@@ -55,7 +55,7 @@
       "type": "shell",
       "label": "new",
       "options": { "cwd": "${workspaceFolder}" },
-      "command": "acc new ${input:contest_id}",
+      "command": "acc new ${input:contest_id} -f",
       "problemMatcher": [],
       "presentation": {
         "focus": true
