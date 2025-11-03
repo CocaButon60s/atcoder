@@ -45,7 +45,7 @@ const auto PI = acos(-1);
 #define NO print("No")
 #define YN(cond) (cond) ? YES : NO
 
-#define next_p(v) next_permutation(nall(a))
+#define next_p(v) next_permutation(nall(v))
 
 template <typename T>
 istream &operator>>(istream &i, vc<T> &v)
