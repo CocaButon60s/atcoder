@@ -49,6 +49,9 @@ const auto PI = acos(-1);
 
 #define next_p(v) next_permutation(nall(v))
 
+#define setAnd(a, b, c) set_intersection(nall(a), nall(b), inserter(c, c.begin()))
+#define setOr(a, b, c) set_union(nall(a), nall(b), inserter(c, c.begin()))
+
 template <typename T>
 istream &operator>>(istream &i, vc<T> &v)
 {
