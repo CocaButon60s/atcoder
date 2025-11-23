@@ -14,7 +14,7 @@ ln -fs /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 EOF
 
 RUN <<EOF
-apt-get install -y sudo g++ pipx npm gdb xclip
+apt-get install -y sudo g++ pipx npm gdb xclip time
 npm install -g atcoder-cli
 EOF
 

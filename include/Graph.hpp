@@ -9,8 +9,8 @@ struct Edge
  * @param w 辺の重み（デフォルトは0）
  */
 {
-    const int to;
-    const ll w;
+    int to;
+    ll w;
     Edge(const int to, const ll w = 1) : to(to), w(w) {}
 };
 
