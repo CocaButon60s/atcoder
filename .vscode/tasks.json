@@ -61,6 +61,18 @@
         "focus": true
       },
       "hide": true
+    },
+    {
+      "detail": "不要ファイル削除",
+      "type": "shell",
+      "label": "clean",
+      "options": { "cwd": "${workspaceFolder}" },
+      "command": "source ${workspaceFolder}/.vscode/clean.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "close": true
+      },
+      "hide": true
     }
     // {
     //   "detail": "提出",
