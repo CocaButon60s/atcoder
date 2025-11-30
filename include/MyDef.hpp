@@ -22,6 +22,7 @@ using vcc = vc<char>;
 using vvs = vc<vcs>;
 using vvc = vc<vcc>;
 using vcp = vc<pll>;
+using vcb = vc<bool>;
 
 using pq = priority_queue<ll, vcl>;
 using pq_g = priority_queue<ll, vcl, greater<ll>>;
@@ -42,7 +43,7 @@ const auto PI = acos(-1);
 #define em emplace
 #define pob pop_back
 
-#define print(x) cout << x << endl
+#define print(x) cout << (x) << endl
 #define YES print("Yes")
 #define NO print("No")
 #define YN(cond) (cond) ? YES : NO
@@ -78,7 +79,13 @@ bool chmax(T &a, T b)
 ll llpow(ll base, ll exp)
 {
     ll ret = 1;
-    rep(i, exp) ret *= base;
+    while (exp > 0)
+    {
+        if (exp & 1)
+            ret = ret * base;
+        base = base * base;
+        exp >>= 1;
+    }
     return ret;
 }
 
