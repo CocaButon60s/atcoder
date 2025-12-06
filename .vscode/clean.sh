@@ -7,3 +7,4 @@ rm -Rf joi*
 rm -Rf arc*
 rm -Rf agc*
 rm -Rf nikkei*
+rm -Rf diverta*
