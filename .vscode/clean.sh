@@ -8,3 +8,5 @@ rm -Rf arc*
 rm -Rf agc*
 rm -Rf nikkei*
 rm -Rf diverta*
+rm -Rf cpsco*
+rm -Rf yahoo*
