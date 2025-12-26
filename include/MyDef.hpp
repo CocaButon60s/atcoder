@@ -23,6 +23,7 @@ using vvs = vc<vcs>;
 using vvc = vc<vcc>;
 using vcp = vc<pll>;
 using vcb = vc<bool>;
+using vvb = vc<vcb>;
 
 using pq = priority_queue<ll, vcl>;
 using pq_g = priority_queue<ll, vcl, greater<ll>>;
@@ -30,7 +31,9 @@ using pq_g = priority_queue<ll, vcl, greater<ll>>;
 const ll INF = 2e18;
 const auto PI = acos(-1);
 
-#define rep(i, n) for (ll i = 0; i < (ll)n; i++)
+const vc<pll> DD = {pair(1, 0), pair(0, 1), pair(-1, 0), pair(0, -1)};
+
+#define rep(i, n) for (ll i = 0; i < (ll)(n); i++)
 #define drep(i, n) for (ll i = (n) - 1; i >= 0; i--)
 #define nfor(i, s, n) for (ll i = s; i < n; i++)
 #define dfor(i, s, n) for (ll i = (s) - 1; i >= n; i--)
