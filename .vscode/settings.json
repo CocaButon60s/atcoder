@@ -105,5 +105,6 @@
     "typeinfo": "cpp",
     "valarray": "cpp",
     "variant": "cpp"
-  }
+  },
+  "debug.focusEditorOnBreak": false // デバッグコンソールをずっとフォーカス
 }

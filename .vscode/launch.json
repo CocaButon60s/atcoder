@@ -5,7 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(gdb) 起動",
+      "name": "lldb",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/a.out",
+      "args": [],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "dbg-build",
+      "internalConsoleOptions": "neverOpen" // lldbプロセスで標準入力
+    },
+    {
+      "name": "gdb",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/a.out",
