@@ -18,7 +18,7 @@
       "type": "shell",
       "label": "test",
       "options": { "cwd": "${fileDirname}" },
-      "command": "oj test -d tests",
+      "command": "oj test -d tests || true", // テスト失敗しても続けて再テストできるようにする
       "presentation": {
         "focus": true,
         "echo": false,
