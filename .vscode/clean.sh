@@ -10,3 +10,5 @@ rm -Rf nikkei*
 rm -Rf diverta*
 rm -Rf cpsco*
 rm -Rf yahoo*
+rm -Rf dp*
+rm -Rf tdpc*
