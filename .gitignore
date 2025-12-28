@@ -1,6 +1,6 @@
 *
 !.devcontainer
+!.devcontainer/**
 !.vscode
-!.vscode/*
 !include
 !.gitignore
