@@ -1,0 +1,7 @@
+services:
+  sandbox:
+    build:
+      context: .
+      args:
+        REVEL_SESSION: ${REVEL_SESSION}
+    tty: true

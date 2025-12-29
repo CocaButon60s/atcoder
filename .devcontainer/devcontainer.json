@@ -1,15 +1,21 @@
 {
   "name": "AtCoder Dev Container",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "dockerComposeFile": "compose.yml",
+  "service": "sandbox",
+  "workspaceFolder": "/home/ubuntu/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-vscode.cpptools",
         "esbenp.prettier-vscode",
         "nicollasr.vscode-streamdeck",
-        "charliermarsh.ruff"
+        "charliermarsh.ruff",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "vadimcn.vscode-lldb"
       ]
     }
   },

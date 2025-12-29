@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
-COPY --chown=ubuntu:ubuntu conf/session.json /home/ubuntu/.config/atcoder-cli-nodejs/
-COPY --chown=ubuntu:ubuntu conf/cookie.jar /home/ubuntu/.local/share/online-judge-tools/
+ARG REVEL_SESSION
+
 COPY <<EOF /etc/sudoers.d/ubuntu
 ubuntu ALL=(ALL) NOPASSWD:ALL
 
@@ -19,6 +19,23 @@ npm install -g atcoder-cli
 EOF
 
 USER ubuntu
+
+COPY --chown=ubuntu:ubuntu <<EOF /home/ubuntu/.config/atcoder-cli-nodejs/session.json
+{
+  "cookies": [
+    "REVEL_FLASH=",
+    "REVEL_SESSION=${REVEL_SESSION}"
+  ]
+}
+
+EOF
+COPY --chown=ubuntu:ubuntu <<EOF /home/ubuntu/.local/share/online-judge-tools/cookie.json
+#LWP-Cookies-2.0
+Set-Cookie3: REVEL_FLASH=""; path="/"; domain="atcoder.jp"; path_spec; secure; discard; HttpOnly=None; version=0
+Set-Cookie3: REVEL_SESSION="${REVEL_SESSION}"; path="/"; domain="atcoder.jp"; path_spec; secure; expires="2026-06-26 19:06:01Z"; HttpOnly=None; version=0
+
+EOF
+
 RUN <<EOF
 pipx install online-judge-verify-helper online-judge-tools
 pipx inject online-judge-tools setuptools

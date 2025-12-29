@@ -1,6 +1,9 @@
 *
 !.devcontainer
-!.devcontainer/**
+!.devcontainer/compose.yml
+!.devcontainer/devcontainer.json
+!.devcontainer/Dockerfile
+
 !.vscode
 !include
 !.gitignore
